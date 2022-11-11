@@ -1,0 +1,45 @@
+body {
+
+    background-image: url("./images/B23-1.jpg");
+}
+
+h1 {
+    color:black;
+  
+    margin-bottom: 100px;
+}
+
+.form-control {
+    background-color: black;
+    color: aqua;
+    
+}
+
+.list-group  {
+    background-color: black;
+    color: aqua;
+    border: solid 1px white;
+    margin-bottom: 100px;
+   
+}
+
+.list-group-item {
+    background-color: black;
+    color: aqua;
+ 
+   
+
+
+}
+
+.container {
+    margin-top: 75px;
+    background-color: gray;
+    border: solid 3px black;
+    box-shadow: 0px 0px 100px 35px black;
+}
+
+.btn {
+
+    margin-bottom: 20px;
+}
