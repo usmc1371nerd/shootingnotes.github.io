@@ -9,7 +9,7 @@ DB_NAME = "database.db"
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'darkchaos'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///{DB_NAME}"
     db.init_app(app)
 
    
@@ -21,9 +21,10 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
     # app.register_blueprint(bzo, url_prefix='/')
 
+    from . import models
     from .models import User
 
-    create_database(app)
+  
     
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
@@ -33,10 +34,10 @@ def create_app():
     def load_user(id):
         return User.query.get(int(id))
 
-
+    with app.app_context():
+        db.create_all()
     return app 
 
 def create_database(app):
     if not path.exists('website/' + DB_NAME):
-        db.create_all(app=app)
         print('Created Database!')
