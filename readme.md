@@ -24,3 +24,7 @@ Login for bottega:
  password:12345678
 
 
+or you can use 
+email: admin@admin
+password: 12345678
+
