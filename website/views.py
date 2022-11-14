@@ -37,12 +37,12 @@ def delete_note():
     return jsonify({})
 
 
-# bzo = Blueprint('/bzo', __name__)
+zero = Blueprint('/zero', __name__)
 
-# @views.route ('/bzo', methods=['GET', 'POST'])   
-# @login_required
-# def nothome():
-#     return render_template("bzo.html", user=current_user)
+@views.route ('/zero', methods=['GET', 'POST'])   
+@login_required
+def zero():
+    return render_template("zero.html", user=current_user)
 
 # #     if request.method == 'POST':
 # #         bzonote = request.form.get('bzonote')

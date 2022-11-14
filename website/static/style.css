@@ -43,3 +43,31 @@ h1 {
 
     margin-bottom: 20px;
 }
+
+.target {
+  
+    background-repeat: no-repeat;
+    background-image: url(./images/B23-1.jpg);
+    height: 250px;
+    width: 250px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+
+.shotgroupcontainer {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.siteadjustmentscontainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.siteadjustments {
+   margin-left: 25px;
+   margin-right: 10px;
+}
