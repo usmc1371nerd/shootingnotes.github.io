@@ -19,8 +19,8 @@ JINJA2 (Templating language this is also my something new learned)
 For now I new I had to build a smaller app with some short of templating ability as first so I could manage this project on my own. I didn't make any wire frames but instead wrote and drew small little ideas to help drive my organization on my ideas. But with the timeline I knew in order to push a MVP to at least get the idea started. I would have to keep it simple so just a login and signup to control the info of each user and note taking for now will do. So to solve all these problems bootstrap, and jinja seemed like a great fit. I would then do any additional styling using CSS. 
 
 Login for bottega:
-Email: 123@123
-Password:Bottega12 
-
+ just create some random like 
+ email:123@123
+ password:12345678
 
 
