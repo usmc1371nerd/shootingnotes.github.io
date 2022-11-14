@@ -44,6 +44,13 @@ zero = Blueprint('/zero', __name__)
 def zero():
     return render_template("zero.html", user=current_user)
 
+distance = Blueprint('/distance', __name__)
+
+@views.route ('/distance', methods=['GET', 'POST'])   
+@login_required
+def distance():
+    return render_template("distance.html", user=current_user)
+
 # #     if request.method == 'POST':
 # #         bzonote = request.form.get('bzonote')
 
