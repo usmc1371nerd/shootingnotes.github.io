@@ -1,8 +1,7 @@
-body {
 
+body {
     background-image: url("./images/B23-1.jpg");
 }
-
 h1 {
     color:black;
   
@@ -37,6 +36,7 @@ h1 {
     background-color: gray;
     border: solid 3px black;
     box-shadow: 0px 0px 100px 35px black;
+   
 }
 
 .btn {
@@ -55,16 +55,22 @@ h1 {
 
 }
 
+
+
 .shotgroupcontainer {
     display: flex;
     flex-direction: row;
+    
 }
+ 
+
 
 
 
 .siteadjustmentscontainer{
     display: flex;
     flex-direction: row;
+      
 }
 
 .siteadjustments {
@@ -76,3 +82,6 @@ h1 {
     margin-left: 25px;
     margin-right: 12px;
  }
+
+
+
