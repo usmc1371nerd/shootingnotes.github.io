@@ -37,43 +37,43 @@ def delete_note():
     return jsonify({})
 
 
-# zero = Blueprint('/zero', __name__)
+zero = Blueprint('/zero', __name__)
 
-# @views.route ('/zero', methods=['GET', 'POST'])   
-# @login_required
-# def zero():
-#     return render_template("zero.html", user=current_user)
+@views.route ('/zero', methods=['GET', 'POST'])   
+@login_required
+def zero():
+    return render_template("zero.html", user=current_user)
 
-# distance = Blueprint('/distance', __name__)
+distance = Blueprint('/distance', __name__)
 
-# @views.route ('/distance', methods=['GET', 'POST'])   
-# @login_required
-# def distance():
-#     return render_template("distance.html", user=current_user)
+@views.route ('/distance', methods=['GET', 'POST'])   
+@login_required
+def distance():
+    return render_template("distance.html", user=current_user)
 
-# #     if request.method == 'POST':
-# #         bzonote = request.form.get('bzonote')
+    if request.method == 'POST':
+        bzonote = request.form.get('bzonote')
 
-# #         if len(bzonote) < 8:
-# #             flash('Note is too short!', category='error')
-# #         else:
-# #             new_note = Bzonote(data=bzonote, user_id= current_user.id)
-# #             db.session.add(new_note)
-# #             db.session.commit()
-# #             flash('Note added!', category='success')
+        if len(bzonote) < 8:
+            flash('Note is too short!', category='error')
+        else:
+            new_note = Bzonote(data=bzonote, user_id= current_user.id)
+            db.session.add(new_note)
+            db.session.commit()
+            flash('Note added!', category='success')
 
     
-#     return render_template("bzo.html", user=current_user)
+    return render_template("bzo.html", user=current_user)
 
-# #     @views.route('/delete-notebzo', methods=[ 'POST' ])
-# #     def delete_note():
-# #         bzonote = json.loads(request.data)
-# #         bzonoteId = bzonote['noteId']
-# #         bzonote = Bzonote.query.get(noteId)  
-# #         if bzonote:
-# #             if bzonote.user_id == current_user.id:
-# #                 db.session.delete(note)
-# #                 db.session.commit()
+    @views.route('/delete-notebzo', methods=[ 'POST' ])
+    def delete_note():
+        bzonote = json.loads(request.data)
+        bzonoteId = bzonote['noteId']
+        bzonote = Bzonote.query.get(noteId)  
+        if bzonote:
+            if bzonote.user_id == current_user.id:
+                db.session.delete(note)
+                db.session.commit()
             
-# #             return jsonify({})
+            return jsonify({})
 
