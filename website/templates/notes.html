@@ -7,15 +7,29 @@
 <h1 align="center">Notes</h1>
 <ul class="list-group list-group-flush" id="notes">
     {% for note in user.notes %}
-    <li class="list-group-item" >
+    <li class="list-group-item">
+        
+        
         {{ note.data }}
+        {{ note.date}}
+       
+        
         <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-         <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
         </button>
+        
+        <button class="close" onClick="showOrHide({{ note.id }})"><span aria-hidden="true">&#9998;</span></button>
+       
+        
+         <form id="showOrHide_{{ note.id }}" class="update-form" method="POST">
+            <textarea name="note" id="update_note_{{ note.id }}" class="form-control" placeholder="update your note with any changes"></textarea>
+            <button type="button" class="update" onClick="update({{ note.id }}, '{{ note.id }}')">update</button>
+         </form>
+       
+       
+        
     </li>
-    
-    {%endfor%}
-
+    {% endfor %}
 </ul>
 <form method="POST">
     <textarea name="note" id="note" class="form-control"></textarea>
@@ -26,5 +40,6 @@
     </div>
 
 </form>
+
 
 {% endblock %}

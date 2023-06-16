@@ -11,6 +11,25 @@ function deleteNote(noteId) {
 
 };
 
+function update(noteId, update_note) {
+    const data = {
+        noteId: noteId,
+        data: document.getElementById(`update_note_${update_note}`).value
+    };
+
+    fetch('/update', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(() => {
+        window.location.href = "/";
+    });
+}
+
+
 $(document).ready(function(){ 
     
     $(document).click(function (ev) {
@@ -29,4 +48,17 @@ $(document).ready(function(){
     });
     
 });
+let isClicked = {}; // Object to store the click state for each note
 
+function showOrHide(noteId) {
+    const formId = `showOrHide_${noteId}`;
+    const divContainer = document.getElementById(formId);
+
+    if (!isClicked[formId]) {
+        divContainer.style.display = "block";
+        isClicked[formId] = true;
+    } else {
+        divContainer.style.display = "none";
+        isClicked[formId] = false;
+    }
+}

@@ -2,6 +2,8 @@ from flask import Flask
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+from sqlalchemy.orm import scoped_session
+
 
 
 class Note(db.Model):
