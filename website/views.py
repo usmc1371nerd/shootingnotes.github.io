@@ -7,7 +7,7 @@ import json
 
 
 views = Blueprint('views', __name__)
-information = Blueprint('information', __name__)
+about = Blueprint('about', __name__)
 zero = Blueprint('zero', __name__)
 distance = Blueprint('distance', __name__)
 
@@ -48,10 +48,10 @@ def delete_note():
 
 
 
-@views.route('/information', methods=['GET'])
+@views.route('/about', methods=['GET'])
 
-def information():
-    return render_template('information.html', user=current_user)
+def about():
+    return render_template('about.html', user=current_user)
 
 
 @views.route ('/zero', methods=['GET', 'POST'])   

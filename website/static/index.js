@@ -48,7 +48,10 @@ $(document).ready(function(){
     });
     
 });
-let isClicked = {}; // Object to store the click state for each note
+
+// function that hides the update text field and button
+
+let isClicked = {}; 
 
 function showOrHide(noteId) {
     const formId = `showOrHide_${noteId}`;
@@ -61,4 +64,22 @@ function showOrHide(noteId) {
         divContainer.style.display = "none";
         isClicked[formId] = false;
     }
+}
+
+
+function recreateForm() {
+ 
+const formContainer = $('#formContainer');
+const fromHTML = `
+<div class="shotgrouptarget">
+ 
+  <div class="target"><img src="../static/images/B23-1.jpg"></div>
+  <form id="bzo-grouping" class="shotform">
+    <td><input type="text" placeholder="Elevation"></td> <br>
+    <td><input type="text" placeholder="Windage"></td> <br> 
+  </form>
+</div>
+` ;
+formContainer.append(fromHTML);
+
 }
