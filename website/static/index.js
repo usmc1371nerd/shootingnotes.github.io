@@ -83,3 +83,9 @@ const fromHTML = `
 formContainer.append(fromHTML);
 
 }
+
+function deleteForm() {
+    const deleteForm = document.querySelector('.shotgrouptarget');
+    deleteForm.remove();
+}
+
