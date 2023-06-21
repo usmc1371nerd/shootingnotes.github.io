@@ -89,3 +89,32 @@ function deleteForm() {
     deleteForm.remove();
 }
 
+
+
+  
+
+function plotShot() {
+    const formContainer = $('#formContainer');
+    
+    formContainer.on('click', '.shotgrouptarget', function (ev) {
+      const mouseX = ev.pageX;
+      const mouseY = ev.pageY;
+      console.log(mouseX + ' ' + mouseY);
+      
+      const color = 'white';
+      const size = '15px';
+      const radius = '50%';
+      
+      $(this).find('.target').append(
+        $('<div></div>')
+          .css('position', 'absolute')
+          .css('top', mouseY + 'px')
+          .css('left', mouseX + 'px')
+          .css('width', size)
+          .css('height', size)
+          .css('background-color', color)
+          .css('border-radius', radius)
+      );
+    });
+  }
+  
